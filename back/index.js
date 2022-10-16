@@ -16,7 +16,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 
-app.use(cors({credentials:true, origin:"https://taskfontend-fi3f1q6ea-ahsanamineu181400095-gmailcom.vercel.app"}))
+app.use(cors({credentials:true, origin:"https://taskfontend.vercel.app"}))
 
 mongoose.connect(`${process.env.Mongo}`).then(()=>{
     console.log("Mongodb Connected")
