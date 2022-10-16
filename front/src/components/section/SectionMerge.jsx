@@ -15,7 +15,7 @@ export default function SectionMerge(){
         id:''
     })
     const chkUser = async()=>{
-        const res = await axios.get('http://localhost:8800/isValid',{
+        const res = await axios.get('https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/isValid',{
             withCredentials:true
         })
 
@@ -82,7 +82,7 @@ export default function SectionMerge(){
 
     const dataSend = async()=>{
         const {username,email,password}=user
-        const res= await axios.post('http://localhost:8800/reg',{
+        const res= await axios.post('https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/reg',{
             username,email,password
         })
 
@@ -114,7 +114,7 @@ export default function SectionMerge(){
 
     const tryToLogin = async()=>{
         const {username,password}=login
-        const res= await axios.post('http://localhost:8800/login',{
+        const res= await axios.post('https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/login',{
             username,password
         })
         return res.data
@@ -140,7 +140,7 @@ export default function SectionMerge(){
 //<<====================Logout Start===========>>
 const logOut = async(e)=>{
     try{
-        await axios.post('http://localhost:8800/logout',{},{
+        await axios.post('https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/logout',{},{
             withCredentials:true
         })
         setLogged(false)
@@ -208,7 +208,7 @@ const handleAddSubmit = async(e)=>{
     setETasks([...tasks,...tdata])
     setData({})
     try{
-            const res = await axios.post('http://localhost:8800/tasks/add',{
+            const res = await axios.post('https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/tasks/add',{
             taskname:data.taskname,
             taskdes:data.taskdes,
             status:true,
@@ -244,7 +244,7 @@ const handleAddSubmit = async(e)=>{
 
 const GetData = async()=>{
     try{
-        const res = await axios.get('http://localhost:8800/tasks/',{
+        const res = await axios.get('https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/tasks/',{
         withCredentials:true
          })
         return res
@@ -283,7 +283,7 @@ const handleEditSubmit = async(e)=>{
 
     const{taskname,taskdes,status,created} = tasksEdit[parseInt(e.target.name)]
     try{
-        const res = await axios.put(`http://localhost:8800/tasks/edit/${e.target.name}`,{
+        const res = await axios.put(`https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/tasks/edit/${e.target.name}`,{
             taskname,
             taskdes,
             created,
@@ -321,7 +321,7 @@ const handleComplete = async(e)=>{
     const{taskname,taskdes,status,created} = tasks[index];
     // console.log("HELl: ",tasks)
     try{
-        const res = await axios.put(`http://localhost:8800/tasks/edit/${e.target.id}`,{
+        const res = await axios.put(`https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/tasks/edit/${e.target.id}`,{
             taskname,
             taskdes,
             status:!status,
@@ -350,7 +350,7 @@ const handleDelete = async(e) =>{
     setTasks([...Tdata])
     setETasks([...Tdata])
     try{
-        const res = await axios.delete(`http://localhost:8800/tasks/${e.target.id}`,
+        const res = await axios.delete(`https://taskbackend-dqunzwx49-ahsanamineu181400095-gmailcom.vercel.app/tasks/${e.target.id}`,
         {
             withCredentials:true
         })
