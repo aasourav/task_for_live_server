@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use(cors({
     "headers": [
       {
-        "source": "/api/(.*)",
+        "source": "https://taskfontend.vercel.app/",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
