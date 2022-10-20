@@ -17,7 +17,8 @@ app.use(express.json())
 app.use(cookieParser())
 
 
-app.use(cors({credentials:true, origin:"https://taskfontend.vercel.app",}))
+// app.use(cors({credentials:true, origin:"https://taskfontend.vercel.app",}))
+app.use(cors({credentials:true}))
 app.use(function(req,res,next){
     res.header("Access-Control-Allow-Origin","*");
     res.header(
