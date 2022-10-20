@@ -82,7 +82,7 @@ export default function SectionMerge(){
 
     const dataSend = async()=>{
         const {username,email,password}=user
-        const res= await axios.post('https://taskmanager-e2ok.onrender.com/reg',{
+        const res= await axios.post('https://taskmanager-n4bt.onrender.com/reg',{
             username,email,password
         })
 
@@ -114,7 +114,7 @@ export default function SectionMerge(){
 
     const tryToLogin = async()=>{
         const {username,password}=login
-        const res= await axios.post('https://taskmanager-e2ok.onrender.com/login',{
+        const res= await axios.post('https://taskmanager-n4bt.onrender.com/login',{
             username,password
         })
         return res.data
@@ -140,7 +140,7 @@ export default function SectionMerge(){
 //<<====================Logout Start===========>>
 const logOut = async(e)=>{
     try{
-        await axios.post('https://taskmanager-e2ok.onrender.com/logout',{},{
+        await axios.post('https://taskmanager-n4bt.onrender.com/logout',{},{
             withCredentials:true
         })
         setLogged(false)
@@ -208,7 +208,7 @@ const handleAddSubmit = async(e)=>{
     setETasks([...tasks,...tdata])
     setData({})
     try{
-            const res = await axios.post('https://taskmanager-e2ok.onrender.com/tasks/add',{
+            const res = await axios.post('https://taskmanager-n4bt.onrender.com/tasks/add',{
             taskname:data.taskname,
             taskdes:data.taskdes,
             status:true,
@@ -244,7 +244,7 @@ const handleAddSubmit = async(e)=>{
 
 const GetData = async()=>{
     try{
-        const res = await axios.get('https://taskmanager-e2ok.onrender.com/tasks/',{
+        const res = await axios.get('https://taskmanager-n4bt.onrender.com/tasks/',{
         withCredentials:true
          })
         return res
@@ -283,7 +283,7 @@ const handleEditSubmit = async(e)=>{
 
     const{taskname,taskdes,status,created} = tasksEdit[parseInt(e.target.name)]
     try{
-        const res = await axios.put(`https://taskmanager-e2ok.onrender.com/tasks/edit/${e.target.name}`,{
+        const res = await axios.put(`https://taskmanager-n4bt.onrender.com/tasks/edit/${e.target.name}`,{
             taskname,
             taskdes,
             created,
@@ -321,7 +321,7 @@ const handleComplete = async(e)=>{
     const{taskname,taskdes,status,created} = tasks[index];
     // console.log("HELl: ",tasks)
     try{
-        const res = await axios.put(`https://taskmanager-e2ok.onrender.com/tasks/edit/${e.target.id}`,{
+        const res = await axios.put(`https://taskmanager-n4bt.onrender.com/tasks/edit/${e.target.id}`,{
             taskname,
             taskdes,
             status:!status,
@@ -350,7 +350,7 @@ const handleDelete = async(e) =>{
     setTasks([...Tdata])
     setETasks([...Tdata])
     try{
-        const res = await axios.delete(`https://taskmanager-e2ok.onrender.com/tasks/${e.target.id}`,
+        const res = await axios.delete(`https://taskmanager-n4bt.onrender.com/tasks/${e.target.id}`,
         {
             withCredentials:true
         })
