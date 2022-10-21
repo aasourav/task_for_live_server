@@ -17,20 +17,8 @@ app.use(express.json())
 app.use(cookieParser())
 
 
-// app.use(cors({credentials:true, origin:"https://taskfontend.vercel.app",}))
-app.use(cors({credentials:true}))
-app.use(function(req,res,next){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header(
-        "Access-Control-Allow-Methods",
-        "GET,HEAD,OPTIONS,POST,PUT,DELETE"
-    );
-    res.header(
-       "Access-Control-Allow-Headers",
-       "Origin,X-Requested-with,Content-Type,Accept,Authorization" 
-    );
-    next();
-})
+app.use(cors({credentials:true, origin:["https://taskfontend.vercel.app","https://taskfontend-git-main-ahsanamineu181400095-gmailcom.vercel.app/"]}))
+
 
 mongoose.connect(`${process.env.Mongo}`).then(()=>{
     console.log("Mongodb Connected")
